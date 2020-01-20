@@ -1,4 +1,4 @@
-//TODO: STEP 1 - Impadded useStaeort the useState hook.
+//TODO: STEP 1 - Import the useState hook.
 
 // import React from "react";
 //-------
@@ -9,23 +9,23 @@ import "./App.css";
 import BottomRow from "./BottomRow";
 
 function App() {
-  //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-//------There are 3 slices of useState in this problem
+  //TODO: STEP 2 - Establish your application's state with some useState hooks.  You'll need one for the home score and another for the away score.
+//------There are 2 slices of useState in this problem
   const [homeScore, setHomeScore] = useState(0)
   const [awayScore, setAwayScore] = useState(0)
-  const [startTimer, setStartTimer] = useState(0)
+  
 
-  const addSevenHome = event =>{
+  const homeTouchdown = event =>{
     setHomeScore(homeScore + 7);
   }
-  const addThreeHome = event =>{
+  const homeFieldGoal = event =>{
     setHomeScore(homeScore + 3)
   }
 
-  const addSevenAway = event =>{
+  const awayTouchdown = event =>{
     setAwayScore(awayScore + 7)
   }
-  const addThreeAway = event =>{
+  const awayFieldGoal = event =>{
     setAwayScore(awayScore + 3)
   }
 
@@ -46,11 +46,11 @@ function App() {
 
             {/* //-------------- */}
           </div>
-          {/* <div className="timer">00:03</div> */}
+          <div className="timer">00:03</div>
 
          {/* /------------ */}
 
-          <div className="timer">{startTimer}</div>
+          {/* <div className="timer">{startTimer}</div> */}
 
           {/* ------------ */}
           <div className="away">
@@ -74,8 +74,8 @@ function App() {
           <button className="homeButtons__fieldGoal">Home Field Goal</button> */}
 
            {/* -------- */}
-          <button className="homeButtons__touchdown" onClick = {addSevenHome}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick = {addThreeHome}>Home Field Goal</button>
+          <button className="homeButtons__touchdown" onClick = {homeTouchdown}>Home Touchdown</button>
+          <button className="homeButtons__fieldGoal" onClick = {homeFieldGoal}>Home Field Goal</button>
             {/* -------- */}
           
         </div>
@@ -83,8 +83,8 @@ function App() {
           {/* <button className="awayButtons__touchdown">Away Touchdown</button>
           <button className="awayButtons__fieldGoal">Away Field Goal</button> */}
         {/* --------- */}
-          <button className="awayButtons__touchdown" onClick = {addSevenAway} >Away Touchdown</button>
-          <button className="awayButtons__fieldGoal" onClick = {addThreeAway}>Away Field Goal</button> 
+          <button className="awayButtons__touchdown" onClick = {awayTouchdown} >Away Touchdown</button>
+          <button className="awayButtons__fieldGoal" onClick = {awayFieldGoal}>Away Field Goal</button> 
 
           {/* ---------- */}
         </div>
